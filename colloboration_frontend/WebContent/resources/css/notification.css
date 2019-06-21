@@ -15,7 +15,7 @@
 .dropdown-content {
     display: block;
     position: absolute;
-    background-color: #804040;
+    background-color: #8080ff;
     min-width: 250px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
@@ -27,5 +27,5 @@ background-color: #408080;
 }
 
 #portfolio #portfolio-title {
-background-color: #2E3747 !important;
+background-color: #808080!important;
 }
