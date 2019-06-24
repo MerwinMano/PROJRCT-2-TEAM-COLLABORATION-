@@ -28,7 +28,7 @@ import mer.mano.model.User;
 public class DBConfiguration {
 	
 	public DBConfiguration(){
-		System.out.println("DBCOnfiguration class instantiated");
+		System.out.println("-----DBCOnfiguration class instantiated----------");
 	}
 	@Bean
 	public SessionFactory sessionFactory() {
@@ -40,6 +40,7 @@ public class DBConfiguration {
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
+		System.out.println("----Session Factory Object created-----");
 		Class classes[]=new Class[]{User.class,Job.class,BlogPost.class,BlogPostLikes.class,Notification.class,BlogComment.class,ProfilePicture.class,Friend.class};
 	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 	}
@@ -50,11 +51,13 @@ public class DBConfiguration {
 	    dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:admin");
 	    dataSource.setUsername("SYSTEM");
 	    dataSource.setPassword("Admin12345");
+	    System.out.println("--Data source created-----");
 	    return dataSource;
 	    
 	}
 	@Bean
 	public HibernateTransactionManager hibTransManagement(){
+		System.out.println("---Transaction Management created-------");
 		return new HibernateTransactionManager(sessionFactory());
 	}
 

@@ -23,7 +23,7 @@ public class User {
 	@Column(nullable=false)
 	private String role;
 	@Column (name="online_status")
-	private String online;
+	private boolean online;
 	public String getEmail() {
 		return email;
 	}
@@ -60,10 +60,10 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public String isOnline() {
+	public boolean isOnline() {
 		return online;
 	}
-	public void setOnline(String online) {
+	public void setOnline(boolean online) {
 		this.online = online;
 	}
 	

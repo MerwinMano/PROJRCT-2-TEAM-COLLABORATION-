@@ -23,13 +23,13 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
 	
 
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-		System.out.println("REGISTER STOMP ENDPOINTS...");
+		System.out.println("----REGISTER STOMP ENDPOINTS...");
 		registry.addEndpoint("/chatmodule").withSockJS();
 	}
 
 	
 	public void configureMessageBroker(MessageBrokerRegistry  configurer) {
-		System.out.println("CONFIGURE MESSAGE BROKER REGISTRY");
+		System.out.println("=-----CONFIGURE MESSAGE BROKER REGISTRY-----");
 		configurer.enableSimpleBroker("/queue/", "/topic/");
 		configurer.setApplicationDestinationPrefixes("/app");
 	}
